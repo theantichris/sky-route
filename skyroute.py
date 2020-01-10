@@ -3,7 +3,6 @@ from vc_metro import vc_metro
 from vc_landmarks import vc_landmarks
 from landmark_choices import landmark_choices
 
-# Build your program below:
 landmark_string = ""
 for letter, landmark in landmark_choices.items():
     landmark_string += "{} - {}\n".format(letter, landmark)
@@ -14,7 +13,13 @@ def greet():
 
 # Sets the selected origin and destination points
 def set_start_and_end(start_point, end_point):
-    pass
+    if start_point is not None:
+        change_point = input("What would you like to change? You can enter 'o' for 'origin', 'd' for 'destination', or 'b' for 'both':")
+    else:
+        start_point = get_start()
+        end_point = get_end()
+
+    return start_point, end_point
 
 # Request an origin from the user
 def get_start():

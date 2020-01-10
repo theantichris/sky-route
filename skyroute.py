@@ -12,6 +12,18 @@ def greet():
     print("Hi there and welcome to SkyRoute!")
     print("We'll help you find the shortest route between the following Vancouver landmarks:\n" + landmark_string)
 
+# Sets the selected origin and destination points
+def set_start_and_end(start_point, end_point):
+    pass
+
+# Request an origin from the user
+def get_start():
+    pass
+
+# Request the destinaton from the user
+def get_end():
+    pass
+
 def skyroute():
     greet()
 

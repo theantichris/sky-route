@@ -11,3 +11,8 @@ for letter, landmark in landmark_choices.items():
 def greet():
     print("Hi there and welcome to SkyRoute!")
     print("We'll help you find the shortest route between the following Vancouver landmarks:\n" + landmark_string)
+
+def skyroute():
+    greet()
+
+skyroute()

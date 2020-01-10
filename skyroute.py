@@ -8,4 +8,6 @@ landmark_string = ""
 for letter, landmark in landmark_choices.items():
     landmark_string += "{} - {}\n".format(letter, landmark)
 
-print(landmark_string)
+def greet():
+    print("Hi there and welcome to SkyRoute!")
+    print("We'll help you find the shortest route between the following Vancouver landmarks:\n" + landmark_string)

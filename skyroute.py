@@ -62,6 +62,11 @@ def new_route(start_point = None, end_point = None):
 
     print("The shortest metro route from {} to {} is:\n{}".format(start_point, end_point, shortest_route_string))
 
+    again = input("Would you like to see another route? Enter y/n: ")
+
+    if again.lower() == 'y':
+        new_route(start_point, end_point)
+
 def get_route(start_point, end_point):
     start_stations = vc_landmarks[start_point]
     end_stations = vc_landmarks[end_point]

@@ -34,13 +34,27 @@ def set_start_and_end(start_point, end_point):
 
 # Request an origin from the user
 def get_start():
-    pass
+    start_point_letter = input("Where are you coming from? Type in the corresponding letter: ")
+
+    if start_point_letter in landmark_choices.keys():
+        start_point = landmark_choices[start_point_letter]
+    else:
+        print("Sorry, that's not a landmark we have data on. Let's try this again...")
+        get_start()
 
 # Request the destinaton from the user
 def get_end():
-    pass
+    end_point_letter = input(
+        "Ok, where are you headed? Type in the corresponding letter: ")
+
+    if end_point_letter in landmark_choices.keys():
+        end_point = landmark_choices[end_point_letter]
+    else:
+        print("Sorry, that's not a landmark we have data on. Let's try this again...")
+        get_end()
 
 def skyroute():
     greet()
 
-skyroute()
+# skyroute()
+print(set_start_and_end(None, None))

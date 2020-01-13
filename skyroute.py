@@ -38,6 +38,7 @@ def get_start():
 
     if start_point_letter in landmark_choices.keys():
         start_point = landmark_choices[start_point_letter]
+        return start_point
     else:
         print("Sorry, that's not a landmark we have data on. Let's try this again...")
         get_start()
@@ -49,12 +50,17 @@ def get_end():
 
     if end_point_letter in landmark_choices.keys():
         end_point = landmark_choices[end_point_letter]
+        return end_point
     else:
         print("Sorry, that's not a landmark we have data on. Let's try this again...")
         get_end()
 
 def new_route(start_point = None, end_point = None):
     start_point, end_point = set_start_and_end(start_point, end_point)
+    shortest_route = get_route(start_point, end_point)
+    shortest_route_string = "\n".join(shortest_route)
+
+    print("The shortest metro route from {} to {} is:\n{}".format(start_point, end_point, shortest_route_string))
 
 def get_route(start_point, end_point):
     start_stations = vc_landmarks[start_point]
@@ -74,7 +80,6 @@ def get_route(start_point, end_point):
 
 def skyroute():
     greet()
+    new_route()
 
-
-# skyroute()
-print(get_route("Marine Building", "Kitsilano Beach"))
+skyroute()
